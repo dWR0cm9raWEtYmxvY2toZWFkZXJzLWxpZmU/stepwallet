@@ -14,8 +14,15 @@ class Settings extends Component{
 	    }
 	    dispatch(action)
 	}
+	const select = reddit =>{
+	    const action = {
+		type: 'AUTH',
+		reddit
+	    }
+	    dispatch(action)
+	}	
 	return(
-	    <SettingsModel settings={settings} drawer={drawer}/>
+	    <SettingsModel settings={settings} drawer={drawer} select={select}/>
 	)
     }
 }

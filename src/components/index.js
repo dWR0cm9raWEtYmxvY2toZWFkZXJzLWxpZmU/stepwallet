@@ -22,7 +22,10 @@ const MainModel = props =>{
 		</Button>
 		<Grid className={classes.avatar}><Button fab>
 		    <Avatar alt="indeed avatar" src="/avatar.jpg" className={classes.bigAvatar}/>
-		</Button></Grid>
+		</Button>
+		<Typography style={{marginTop:16}}>{localStorage.auth}</Typography>
+		</Grid>
+
 		<Grid  container className={classes.bottom}>
 		    <Grid item>
 			<Button>

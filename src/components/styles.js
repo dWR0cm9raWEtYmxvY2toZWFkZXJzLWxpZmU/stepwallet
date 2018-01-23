@@ -27,6 +27,7 @@ const styles = theme =>({
 	display:'flex',
 	justifyContent:'center',
 	alignItems:'center',
+	flexDirection:'column',
 	margin: 8 * theme.spacing.unit,	
     },
     bigAvatar: {

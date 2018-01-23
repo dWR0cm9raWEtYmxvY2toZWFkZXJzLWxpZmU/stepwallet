@@ -19,8 +19,6 @@ class CreateWalletModel extends Component{
     state={
 	name: '',
 	passwd: '',
-	repasswd: '',
-	prompt: ''
     }
     changeText = (event) =>{
 	let key = event.target.id
@@ -46,31 +44,30 @@ class CreateWalletModel extends Component{
 	    keyPair: keyPair,
 	    address: address
 	})
-	await localStorage.setItem(this.state.name,JSON.stringify(this.state))
+	await localStorage.setItem(this.state.name, JSON.stringify(this.state))
 	await localStorage.setItem('auth', this.state.name)
 	await alert('创建成功!')
 	history.push('/')
 	history.go(0)
     }
     render(){
-	console.log(localStorage)
 	const { classes } = this.props
 	return(
 	    <FormGroup id="form" className={classes.ctn}>
 		<FormControl>
 		    <InputLabel htmlFor="name-helper">钱包名称</InputLabel>
 		    <Input id="name" onChange={this.changeText} />
-		    <FormHelperText id="name-helper-text">Some important helper text</FormHelperText>
+		    <FormHelperText id="name-helper-text">wallet name</FormHelperText>
 		</FormControl>
 		<FormControl>
 		    <InputLabel htmlFor="passwd-helper">密码</InputLabel>
 		    <Input id="passwd" type="password" onChange={this.changeText} />
-		    <FormHelperText id="passwd-helper-text">Some important helper text</FormHelperText>
+		    <FormHelperText id="passwd-helper-text">wallet password</FormHelperText>
 		</FormControl>
 		<FormControl>
 		    <InputLabel htmlFor="repasswd-helper">重复密码</InputLabel>
-		    <Input id="repasswd" type="password" onChange={this.changeText} />
-		    <FormHelperText id="repasswd-helper-text">Some important helper text</FormHelperText>
+		    <Input id="repasswd" type="password" />
+		    <FormHelperText id="repasswd-helper-text">repeat password</FormHelperText>
 		</FormControl>
 		<Button onClick={()=>this.createWallet()} className={classes.foo}>
 		    <Typography>创建钱包</Typography>

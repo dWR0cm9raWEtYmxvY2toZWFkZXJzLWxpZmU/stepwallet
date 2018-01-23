@@ -12,6 +12,7 @@ import { connect } from 'react-redux'
 import Auth from './containers/auth'
 import Main from './containers'
 import CreateWallet from './containers/createwallet'
+import ChangeWallet from './containers/changewallet'
 
 class Root extends Component{
     render(){	
@@ -31,6 +32,7 @@ class Root extends Component{
 	    <Router>
 		<div>
 		    <PrivateRoute path="/" exact component={Main}/>
+		    <PrivateRoute path="/changewallet" component={ChangeWallet} />
 		    <Route path="/auth" component={Auth}/>
 		    <Route path="/createwallet" component={CreateWallet} />
 		</div>

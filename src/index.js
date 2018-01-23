@@ -1,4 +1,5 @@
 //
+/* jshint expr: true */
 
 import './index.css';
 import App from './App';
@@ -9,11 +10,12 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import registerServiceWorker from './registerServiceWorker';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import $ from 'jquery'
-$("body").on("touchmove",(event)=>{
-    event.preventDefault
-}, false)
 
+
+document.addEventListener("touchmove",function(e){
+    e.preventDefault();
+    e.stopPropagation();
+},false);
 
 const store = createStore(todoApps)
 const theme = createMuiTheme()

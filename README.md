@@ -23,21 +23,21 @@
 ├── actions
 ├── components
 │   ├── auth
-│   ├── changewallet
-│   ├── createwallet
-│   ├── drawer
-│   └── settings
-├── containers
-│   ├── auth
-│   ├── changewallet
-│   ├── createwallet
-│   ├── drawer
-│   └── settings
-├── reducers
-│   ├── auth
-│   ├── currency
-│   └── drawer
-└── tmp
+│   ├── changewallet  
+│   ├── createwallet  
+│   ├── drawer  
+│   └── settings  
+├── containers  
+│   ├── auth  
+│   ├── changewallet  
+│   ├── createwallet  
+│   ├── drawer  
+│   └── settings  
+├── reducers  
+│   ├── auth  
+│   ├── currency  
+│   └── drawer  
+└── tmp  
 
 
 

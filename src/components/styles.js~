@@ -1,0 +1,52 @@
+
+//
+
+
+const styles = theme =>({
+    row: {
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems:'center',
+	borderWidth:1,
+	borderStyle:'solid',
+	borderColor:'#000',
+	flexDirection:'column',
+    },
+    avatar: {
+	display:'flex',
+	justifyContent:'center',
+	alignItems:'center',
+	margin: 8 * theme.spacing.unit,	
+    },
+    bigAvatar: {
+	width: 60,
+	height: 60,
+    },
+    bottom:{
+	display:'flex',
+	alignItems:'center',
+	justifyContent:'space-between',
+    },
+    edge:{
+	marginLeft: 2*theme.spacing.unit,
+	marginRight: 2*theme.spacing.unit
+    },
+    tools:{
+	display: 'flex',
+	justifyContent: 'space-around',
+	alignItems:'center',
+	borderTopWidth:0,
+	borderWidth:1,
+	borderStyle:'solid',
+	borderColor:'#000',
+	flexDirection:'row',
+	paddingTop: 3 * theme.spacing.unit,
+	paddingBottom: 3 * theme.spacing.unit
+    },
+    tool:{
+	width:36,
+	height:36
+    }
+})
+
+export default styles

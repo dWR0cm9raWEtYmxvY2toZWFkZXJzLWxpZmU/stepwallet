@@ -1,0 +1,12 @@
+
+// main reducer
+
+import { combineReducers } from 'redux'
+import drawer from './drawer'
+import auth from './auth'
+
+const reducer = combineReducers({
+    drawer, auth
+})
+
+export default reducer

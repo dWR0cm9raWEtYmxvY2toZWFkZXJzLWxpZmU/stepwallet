@@ -1,0 +1,37 @@
+//auth
+
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+import AuthModel from '../../components/auth'
+
+class Auth extends Component {
+    render() {
+	const { auth, dispatch } = this.props
+	const { isAuthenticated } = auth
+	const login = reddit =>{
+	    const action = {
+		type: 'AUTH',
+		reddit
+	    }
+	    localStorage.setItem( 'auth', true )
+	    dispatch(action)
+	}
+        const { from } = this.props.location.state || { from: { pathname: '/' } }
+        if (isAuthenticated) {
+            return (
+                <Redirect to={from}/>
+            )
+        }
+
+        return (
+	    <AuthModel />
+        )
+    }
+}
+
+const mapStatesToProps = state => ({
+    auth: state.auth
+})
+
+export default connect(mapStatesToProps)(Auth)

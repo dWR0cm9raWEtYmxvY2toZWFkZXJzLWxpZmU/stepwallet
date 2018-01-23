@@ -1,0 +1,13 @@
+
+//Auth model
+
+
+import React, { Component } from 'react'
+
+class AuthModel extends Component{
+    render(){
+	<div></div>
+    }
+}
+
+export default AuthModel

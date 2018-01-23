@@ -1,0 +1,20 @@
+
+//drawer reducer
+import { combineReducers } from 'redux'
+
+
+const control=( state = false, action )=>{
+    switch(action.type){
+	case 'CONTROL':
+	    return action.reddit
+	default:
+	    return state
+    }
+}
+
+
+const drawer = combineReducers({
+    control
+})
+
+export default drawer

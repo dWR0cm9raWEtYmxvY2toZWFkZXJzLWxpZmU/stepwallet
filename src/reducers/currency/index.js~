@@ -1,0 +1,11 @@
+
+import { combineReducers } from 'redux'
+
+const type = ( state = "all", action ) =>{
+    switch(action.type){
+	case 'TYPE':
+	    return action.reddit
+	default:
+	    return state
+    }
+}

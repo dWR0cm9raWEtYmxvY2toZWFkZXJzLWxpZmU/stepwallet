@@ -1,0 +1,70 @@
+
+import React, { Component } from 'react'
+import Button from 'material-ui/Button'
+import Typography from 'material-ui/Typography'
+import Input, { InputLabel } from 'material-ui/Input'
+import { FormControl, FormHelperText, FormGroup } from 'material-ui/Form'
+import { withStyles } from 'material-ui/styles'
+import styles from './styles'
+import createHistory from 'history/createBrowserHistory'
+
+const history = createHistory()
+
+class CreateWalletModel extends Component{
+    state={
+	name: '',
+	passwd: '',
+	repasswd: '',
+	prompt: ''
+    }
+    changeText = (event) =>{
+	let key = event.target.id
+	this.setState({
+	    [key]: event.target.value
+	})
+    }
+    createWallet = async() =>{
+	let reddit = this.state.name
+	const action = {
+	    type: 'AUTH',
+	    reddit
+	}
+	await localStorage.setItem(this.state.name,JSON.stringify(this.state))
+	await localStorage.setItem('auth', this.state.name)
+	await alert('创建成功!')
+	history.push('/')
+	history.go(0)
+	await this.props.dispatch(action)
+	console.log(this.props.auth)
+    }
+    render(){
+	const { classes } = this.props
+	const showdetail = () =>{
+	    console.log(this.state)
+	}
+	return(
+	    <FormGroup id="form" className={classes.ctn}>
+		<FormControl>
+		<InputLabel htmlFor="name-helper">钱包名称</InputLabel>
+		<Input id="name" onChange={this.changeText} />
+		<FormHelperText id="name-helper-text">Some important helper text</FormHelperText>
+		</FormControl>
+		<FormControl>
+		<InputLabel htmlFor="passwd-helper">密码</InputLabel>
+		<Input id="passwd" type="password" onChange={this.changeText} />
+		<FormHelperText id="passwd-helper-text">Some important helper text</FormHelperText>
+		</FormControl>
+		<FormControl>
+		<InputLabel htmlFor="repasswd-helper">重复密码</InputLabel>
+		<Input id="repasswd" type="password" onChange={this.changeText} />
+		<FormHelperText id="repasswd-helper-text">Some important helper text</FormHelperText>
+		</FormControl>
+		<Button onClick={()=>this.createWallet()} className={classes.foo}>
+		    <Typography>创建钱包</Typography>
+		</Button>
+	    </FormGroup>
+	)
+    }
+}
+
+export default withStyles(styles)(CreateWalletModel)

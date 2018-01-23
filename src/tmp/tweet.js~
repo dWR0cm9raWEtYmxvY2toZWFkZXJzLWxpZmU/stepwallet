@@ -1,0 +1,8 @@
+
+const nacl = require('tweetnacl')
+
+let box = nacl.secretbox('hello', 'imnonce', 'key')
+let msg = nacl.secretbox( box, 'imnonce', 'key')
+
+console.log(box)
+console.log(msg)
